@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OpenFault</Name>
+  <Repository>ghcr.io/openfault/openfault:v0.1.0</Repository>
+  <Registry>https://github.com/OpenFault/openfault/pkgs/container/openfault</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/OpenFault/openfault/issues</Support>
+  <Project>https://openfault.dev</Project>
+  <Overview>Self-hosted, Sentry-compatible error tracker. One container, SQLite inside, under 100 MB RAM. Keep your Sentry SDK, change the DSN. Includes an MCP server for coding agents.</Overview>
+  <Category>Tools:Utilities Other:</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/OpenFault/unraid-templates/main/templates/openfault.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/OpenFault/unraid-templates/main/icon.png</Icon>
+  <ExtraParams>--health-cmd="/openfault healthcheck" --health-interval=30s</ExtraParams>
+  <PostArgs/>
+  <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Web UI, API and Sentry ingest." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/openfault" Mode="rw" Description="SQLite database and generated secret. Must be owned by uid 65532 (chown 65532:65532 on first run)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/openfault</Config>
+  <Config Name="Base URL" Target="OPENFAULT_BASE_URL" Default="" Mode="" Description="Public URL (https://errors.example.com) used in DSNs and emails. Leave empty to use the Host header." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Trust proxy" Target="OPENFAULT_TRUST_PROXY" Default="" Mode="" Description="Set to 1 only behind your own reverse proxy." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Setup token" Target="OPENFAULT_SETUP_TOKEN" Default="" Mode="" Description="Optional pre-set one-time setup token. Otherwise read it from the container log." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+</Container>

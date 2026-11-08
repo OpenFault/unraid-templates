@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommunityApplications>
+  <Profile>OpenFault is a self-hosted, Sentry-compatible error tracker: one container, SQLite inside, built for coding agents (MCP).</Profile>
+  <Icon>https://raw.githubusercontent.com/OpenFault/unraid-templates/main/icon.png</Icon>
+  <WebPage>https://openfault.dev</WebPage>
+</CommunityApplications>
