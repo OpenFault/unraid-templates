@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>OpenFault</Name>
-  <Repository>ghcr.io/openfault/openfault:v0.1.0</Repository>
+  <Repository>ghcr.io/openfault/openfault:0.1.0</Repository>
   <Registry>https://github.com/OpenFault/openfault/pkgs/container/openfault</Registry>
   <Network>bridge</Network>
   <MyIP/>
